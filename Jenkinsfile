@@ -3,8 +3,8 @@ node {
   def serviceName = "spt-nextgen-vgnext/bff"
   def deploymentId = "${BUILD_NUMBER}"
 
-  sh "mkdir ${HOME}/.docker"
-  sh "cp /secrets/.dockerconfigjson ${HOME}/.docker/config.json"
+  //sh "mkdir ${HOME}/.docker"
+  //sh "cp /secrets/.dockerconfigjson ${HOME}/.docker/config.json"
 
   stage("Checkout") {
     checkout scm
