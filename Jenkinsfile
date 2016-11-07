@@ -10,13 +10,13 @@ node {
     checkout scm
   }
 
-  def imageTag = flow.getGitCommit();
+  def imageTag = getGitCommit();
 
   docker.withRegistry(registry) {
-    flow.runTests(serviceName, "tests", "")
-    flow.buildService(serviceName, imageTag)
+    runTests(serviceName, "tests", "")
+    buildService(serviceName, imageTag)
 
-    flow.deploy(serviceName, registry, imageTag, deploymentId)
+    deploy(serviceName, registry, imageTag, deploymentId)
   }
 }
 
