@@ -13,7 +13,7 @@ node("k8s") {
   def imageTag = flow.getGitCommit();
 
   docker.withRegistry(registry) {
-    flow.runTests(serviceName, "tests, "")
+    flow.runTests(serviceName, "tests", "")
     flow.buildService(serviceName, imageTag)
 
     flow.deploy(serviceName, registry, imageTag, deploymentId)
