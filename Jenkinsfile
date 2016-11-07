@@ -1,4 +1,4 @@
-node("k8s") {
+node {
   def registry = "containers.schibsted.io"
   def serviceName = "spt-nextgen-vgnext/bff"
   def deploymentId = "${BUILD_NUMBER}"
